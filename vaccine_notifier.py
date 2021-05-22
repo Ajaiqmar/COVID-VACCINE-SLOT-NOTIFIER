@@ -6,14 +6,14 @@ import smtplib
 mail=smtplib.SMTP('smtp.gmail.com',587)
 mail.ehlo()
 mail.starttls()
-sender='knowledge232002@gmail.com'
-recipient='ajaiqmar@gmail.com'
-mail.login('knowledge232002@gmail.com','Ajay@23012002')
+sender='SENDER EMAIL ADDRESS'
+recipient='RECEIVER EMAIL ADDRESS'
+mail.login(sender,'PASSWORD')
 header='To:'+recipient+'\n'+'From:'+sender+'\n'+'subject:ALERT!!\n'
 content=header+"VACCINE AVAILABLE!!"
 
 
-pin_code = "600095"
+pin_code = "PINCODE"
 
 cowin = CoWinAPI()
 
@@ -42,8 +42,7 @@ while(1):
                     t[3]=0
             else:
                 t[4]=(t[4]+4)%60
-            print(t[3],t[4])
-            pk.sendwhatmsg("+919840047501","Vaccine Available",t[3],t[4])
+            pk.sendwhatmsg("WHATSAPP NUMBER","Vaccine Available",t[3],t[4])
 
             t=list(map(int,list(time.localtime(time.time()))))
             if((t[4]+4)>=60):
@@ -53,8 +52,7 @@ while(1):
                     t[3]=0
             else:
                 t[4]=(t[4]+4)%60
-            print(t[3],t[4])
-            pk.sendwhatmsg("+917358028077","Vaccine Available",t[3],t[4])
+            pk.sendwhatmsg("WHATSAPP NUMBER","Vaccine Available",t[3],t[4])
             flag=1
             break
     if(flag):
